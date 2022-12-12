@@ -15,7 +15,12 @@ const Header = () => {
       <span>header</span>
       <div>
         {user ? (
-          <span onClick={onLogout}>Logout</span>
+          <>
+            <span onClick={onLogout}>Logout</span>
+            <span>
+              <Link to="/profile">{user.user.name}</Link>{" "}
+            </span>
+          </>
         ) : (
           <>
             <span>
