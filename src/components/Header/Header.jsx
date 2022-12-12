@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../features/auth/authSlice";
+import "./Header.css"
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -14,11 +15,14 @@ const Header = () => {
     <nav>
       <span>header</span>
       <div>
+        <span>
+          <Link to="/">Home</Link>
+        </span>
         {user ? (
           <>
             <span onClick={onLogout}>Logout</span>
             <span>
-              <Link to="/profile">{user.user.name}</Link>{" "}
+              <Link to="/profile">{user.user.name}</Link>
             </span>
           </>
         ) : (
