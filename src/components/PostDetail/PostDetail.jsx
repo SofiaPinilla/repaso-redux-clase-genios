@@ -11,14 +11,15 @@ const PostDetail = () => {
   useEffect(() => {
     dispatch(getPostById(id));
   }, []);
-
+  if (!post) {
+    return <h1>cargando...</h1>;
+  }
   return (
     <div>
       PostDetail
-  
-   <p>User: {post.User.name}</p>
-   <p>Post Title: {post.title}</p>
-   <p>Post Content: {post.content}</p>
+      <p>User: {post.User?.name}</p>
+      <p>Post Title: {post.title}</p>
+      <p>Post Content: {post.content}</p>
     </div>
   );
 };
