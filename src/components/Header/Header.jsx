@@ -28,6 +28,10 @@ const Header = () => {
           <Link to="/">Home</Link>
         </span>
         <input onKeyUp={handleChange} placeholder="search post" name="text" />
+        {user?.user?.role === "admin" ?  <span>
+          <Link to="/admin">Admin</Link>
+        </span>: ""}
+       
         {user ? (
           <>
             <span onClick={onLogout}>Logout</span>

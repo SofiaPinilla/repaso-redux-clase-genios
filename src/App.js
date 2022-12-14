@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Admin from "./components/Admin/Admin";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
@@ -22,6 +23,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/post/:id" element={<PostDetail />} />
           <Route path="/search/:postName" element={<Search />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </BrowserRouter>
     </div>
